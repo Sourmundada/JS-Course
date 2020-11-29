@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jquery - Write Less, Do More</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Comfortaa', sans-serif;
+		}
+		#menuOpen, #menuClose {
+			display: inline-block;
+			height: 10vh;
+			width: 100%;
+			padding: 40px;
+			text-align: center;
+			text-decoration: none;
+			background: green;
+			color: #fff;
+			font-size: 30px;
+		}
+		#menuOpen:hover	#menuClose:hover {
+			background: yellowgreen;
+		}
+
+		#menuClose {
+			display: none; 
+		}
+
+		#menu {
+			width: 100%;
+			height: 90vh;
+			list-style: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			background: yellow;
+			position: relative;
+			top: 0;
+			left: -100%;
+			transition: 0.5s ease-in;
+		}
+		#menu li {
+			padding: 20px;
+		}
+		#menu li a {
+			text-decoration: none;
+			padding: 20px;
+			color: #000;
+			font-size: 25px;
+			font-family: 'Montserrat', sans-serif;
+		}
+		#menu li a:hover {
+			background: white;
+		}
+
+		@media (max-width: 500px) {
+			#menuOpen, #menuClose {
+				padding: 20px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<a href="#" id="menuOpen">Menu</a>
+	<a href="#" id="menuClose">Close</a>
+	<ul id="menu">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Blogs</a></li>
+		<li><a href="#">Contact</a></li>
+		<li><a href="#">Help</a></li>
+	</ul>
+</body>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#menuClose').css("display", "none");
+			$('#menuOpen').click(function() {
+				$('#menu').css("left", "0");
+				$('#menuClose').css("display", "block");
+				$('#menuOpen').css("display", "none");
+			});
+			$('#menuClose').click(function() {
+				$('#menu').css("left", "-100%");
+				$('#menuClose').css("display", "none");
+				$('#menuOpen').css("display", "block");
+			});
+		});
+	</script>
+</html>

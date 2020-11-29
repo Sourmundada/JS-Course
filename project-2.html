@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Hamburger</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Comfortaa', sans-serif;
+		}
+		#menuBtn {
+			display: inline-block;
+			text-decoration: none;
+			padding: 8px 10px;
+			background: #f4f4f4;
+			color: #red;
+			margin-left: 12px;
+			margin-top: 12px;
+		}
+		.menu {
+			height: 60px;
+			background: red;
+		}
+		#navbar {
+			list-style: none;
+			width: 300px;
+			background: #f4f4f4;
+			padding: 100px;
+			position: relative;
+			top: 0;
+			right: 500px;
+			transition: right 0.5s;
+		}
+		#navbar li {
+			text-align: center;
+			padding: 20px;
+		}
+		#navbar li a {
+			text-decoration: none;
+			color: #333;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="menu">
+	<a href="#" id="menuBtn">Menu</a>
+	</div>
+	<ul id="navbar">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Shop</a></li>
+		<li><a href="#">Contact</a></li>
+		<li><a href="#">My Account</a></li>
+	</ul>
+</body>
+	<script>
+		let menuBtn = document.getElementById('menuBtn');
+		let navbar = document.getElementById('navbar');
+
+		 menuBtn.onclick = function() {
+            if (navbar.style.right == "500px") {
+                navbar.style.right = "0px"
+            }
+            else {
+                navbar.style.right = "500px";
+            }
+        }
+	</script>
+</html>
